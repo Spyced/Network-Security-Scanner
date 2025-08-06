@@ -1,0 +1,37 @@
+# NetSecScan Configuration
+
+scanning:
+  default_ports: "1-1000"
+  threads: 100
+  timeout: 1.0
+  max_retries: 2
+
+vulnerability_scanning:
+  enabled: true
+  cve_api_url: "https://cve.circl.lu/api/search"
+  severity_threshold: "medium"
+  
+services:
+  common_ports:
+    21: "FTP"
+    22: "SSH"
+    23: "Telnet"
+    25: "SMTP"
+    53: "DNS"
+    80: "HTTP"
+    110: "POP3"
+    143: "IMAP"
+    443: "HTTPS"
+    993: "IMAPS"
+    995: "POP3S"
+    3389: "RDP"
+
+reporting:
+  default_format: "console"
+  include_timestamps: true
+  verbose_output: false
+
+logging:
+  level: "INFO"
+  file: "logs/netsec-scan.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
